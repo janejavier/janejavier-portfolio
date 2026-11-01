@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jane Frances Adolar Javier | Computer Engineer</title>
     
-    <!-- FAVICON ICON: Custom bold white 'JJ' inside a smooth blue square -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://w3.org viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%230066cc%22/><text x=%2250%%22 y=%2265%%22 font-family=%22sans-serif%22 font-weight=%22700%22 font-size=%2250%22 fill=%22%23ffffff%22 text-anchor=%22middle%22>JJ</text></svg>">
+    <!-- HIGH-COMPATIBILITY CUSTOM BLUE BACKGROUND 'JJ' TAB ICON -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://w3.org' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230066cc'/%3E%3Ctext x='50%25' y='66%25' font-family='sans-serif' font-weight='700' font-size='50' fill='%23ffffff' text-anchor='middle'%3EJJ%3C/text%3E%3C/svg%3E?v=3">
 
     <style>
         * {
@@ -15,14 +15,14 @@
             padding: 0;
         }
         body {
-            font-family: sans-serif;
-            color: #111111;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            color: #1d1d1f;
             background-color: #ffffff;
             line-height: 1.6;
             padding: 20px;
         }
         .container {
-            max-width: 800px;
+            max-width: 850px;
             margin: 0 auto;
         }
         nav {
@@ -31,70 +31,136 @@
             margin-bottom: 40px;
             display: flex;
             justify-content: space-between;
+            align-items: center;
         }
         .logo {
             font-weight: bold;
             color: #0066cc;
+            font-size: 1.1rem;
         }
         .links a {
             margin-left: 20px;
-            color: #444444;
+            color: #424245;
             text-decoration: none;
+            font-weight: 500;
+        }
+        .links a:hover {
+            color: #0066cc;
         }
         h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
+            font-size: 3rem;
+            margin-bottom: 15px;
+            letter-spacing: -0.03em;
+        }
+        h1 span {
+            color: #0066cc;
         }
         h2 {
-            font-size: 1.8rem;
-            color: #0066cc;
-            margin: 40px 0 20px 0;
-            border-bottom: 1px solid #dddddd;
-            padding-bottom: 5px;
-        }
-        h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
+            font-size: 2rem;
+            color: #1d1d1f;
+            margin: 50px 0 25px 0;
+            border-bottom: 1px solid #d2d2d7;
+            padding-bottom: 8px;
+            letter-spacing: -0.02em;
         }
         p {
             margin-bottom: 15px;
-            color: #333333;
+            color: #424245;
+            font-size: 1.1rem;
         }
         .project-card {
-            background: #f9f9f9;
-            border: 1px solid #dddddd;
-            padding: 20px;
-            margin-bottom: 25px;
-            border-radius: 8px;
+            background: #f5f5f7;
+            border: 1px solid #d2d2d7;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 16px;
         }
-        .img-placeholder {
-            background: #e1e1e1;
-            width: 100%;
-            height: 200px;
+        .project-card h3 {
+            font-size: 1.4rem;
+            color: #1d1d1f;
+            margin-bottom: 10px;
+        }
+        .project-card p {
+            font-size: 1rem;
+            color: #6e6e73;
+        }
+        .tag-container {
             display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 15px;
+        }
+        .tag {
+            background: #ffffff;
+            border: 1px solid rgba(0,0,0,0.08);
+            color: #1d1d1f;
+            font-size: 0.82rem;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+        .edu-wrapper {
+            background: #f5f5f7;
+            border: 1px solid #d2d2d7;
+            padding: 30px;
+            border-radius: 16px;
+        }
+        .edu-item {
+            padding: 15px 0;
+            display: flex;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
-            color: #666666;
-            margin-bottom: 15px;
-            font-weight: bold;
-            border-radius: 4px;
         }
+        .edu-item:first-child { padding-top: 0; }
+        .edu-item:not(:last-child) { border-bottom: 1px solid #d2d2d7; }
+        
         .contact-box {
-            background: #f0f7ff;
-            border: 1px solid #b3d7ff;
-            padding: 20px;
-            border-radius: 8px;
+            background: #f5f5f7;
+            border: 1px solid #d2d2d7;
+            padding: 30px;
+            border-radius: 16px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
         }
-        .contact-box a {
+        .contact-card {
+            background: #ffffff;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #d2d2d7;
+            text-decoration: none;
+            color: #1d1d1f;
+            font-weight: 600;
+            text-align: center;
+        }
+        .contact-card:hover {
+            background: #e8e8ed;
             color: #0066cc;
-            font-weight: bold;
+        }
+        .btn {
+            display: inline-flex;
+            background: #0066cc;
+            color: #fff;
+            padding: 12px 28px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 15px;
+        }
+        .btn:hover { background: #0056b3; }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2.2rem; }
+            h2 { font-size: 1.6rem; }
+            .edu-item { flex-direction: column; align-items: flex-start; gap: 6px; }
+            .contact-box { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- Navigation bar layout row -->
+        <!-- Navigation Header panel row -->
         <nav>
             <div class="logo">janejavier.com</div>
             <div class="links">
@@ -105,51 +171,80 @@
             </div>
         </nav>
 
-        <!-- About block section -->
+        <!-- About block card section -->
         <section id="about">
-            <h1>Jane Javier</h1>
-            <p><strong>Computer Engineering Graduate</strong> | University of Wollongong in Dubai</p>
-            <p>Reliable honors student with demonstrated technical experience across robotics systems development, integrated embedded software architectures, and automated system optimizations.</p>
+            <h1>Hi, I'm <span>Jane Javier</span></h1>
+            <p><strong>Computer Engineering Honors Graduate</strong> | University of Wollongong in Dubai</p>
+            <p>Reliable honors engineering student with technical development experience across robotics architectures, integrated hardware firmware design, and algorithmic system diagnostics. Skilled at analyzing sensory interfaces, solving system feedback dependencies, and executing engineering plans [0.1.3, cite: 1].</p>
+            <a href="mailto:j3javv@gmail.com" class="btn">📧 Email Me Directly</a>
         </section>
 
-        <!-- Projects section dashboard cards -->
+        <!-- Projects grid summary section cards -->
         <section id="projects">
-            <h2>Engineering Projects</h2>
+            <h2>Featured Engineering Projects</h2>
             
             <div class="project-card">
-                <div class="img-placeholder">Image Box: Braille Kit Prototype</div>
                 <h3>Voice-Controlled Braille Learning Kit</h3>
-                <p>An assistive device engineered within an iPhone form factor to teach braille basics. Uses a Raspberry Pi engine for speech recognition logic processing, an Arduino system managing solenoids, and a custom D flip-flop state machine layout. Case modeled in Blender and 3D printed using PLA.</p>
+                <p>Designed a portable, assistive education tool engineered inside a physical structure matching an iPhone form factor to aid visually impaired learners. Built a state logic tracking path using discrete D flip-flops, an Arduino board to map dynamic output solenoids, and a Raspberry Pi module to run real-time voice capture APIs.</p>
+                <div class="tag-container">
+                    <span class="tag">Raspberry Pi</span>
+                    <span class="tag">Arduino Core</span>
+                    <span class="tag">C++ Logic</span>
+                    <span class="tag">Circuit Analysis</span>
+                </div>
             </div>
 
             <div class="project-card">
-                <div class="img-placeholder">Image Box: SoleMate Sensor Placement</div>
                 <h3>SoleMate Smart Biometric Insole</h3>
-                <p>A smart medical shoe layer tracking foot structural movement patterns to identify flat feet or high arches. Integrates an ESP32 processing board, physical piezoelectric force sensors, an MPU6050 accelerometer, and models dynamic pressure heat maps over custom MATLAB templates.</p>
+                <p>Developed an embedded biometric shoe layer utilizing piezoelectric sensor paths to chart kinetic footprint pressures. Collects force matrix parameters via an ESP32 processing chip to calculate physical step indicators, monitor walking gait slants, and generates structural load heatmap configurations using MATLAB scripts.</p>
+                <div class="tag-container">
+                    <span class="tag">ESP32 Core</span>
+                    <span class="tag">MATLAB Scripts</span>
+                    <span class="tag">Piezo Sensor Arrays</span>
+                    <span class="tag">Biometrics</span>
+                </div>
             </div>
 
             <div class="project-card">
-                <div class="img-placeholder">Image Box: Target Mask Filter</div>
-                <h3>Autonomous Robot Target Detection</h3>
-                <p>Developed real-time target identification and category separation codes using the HSV color space matrix. Integrated TurtleBot webcam streams inside the ROS development environment to generate automated boundary constraints and obstacle charts.</p>
+                <h3>Autonomous Robot Target Detection Node</h3>
+                <p>Programmed an operational target identification and isolation script running in the ROS platform via HSV color dimension modeling. Deployed precise camera masking filters and matrix boundary classifications on mobile TurtleBot hardware configurations to execute live route obstruction mapping.</p>
+                <div class="tag-container">
+                    <span class="tag">ROS Architecture</span>
+                    <span class="tag">OpenCV HSV</span>
+                    <span class="tag">TurtleBot Camera</span>
+                    <span class="tag">C++ Node</span>
+                </div>
             </div>
         </section>
 
-        <!-- Education Block -->
+        <!-- Academic History block row summaries -->
         <section id="education">
-            <h2>Education History</h2>
-            <p><strong>Bachelor of Engineering (Honours) Computer Engineering</strong></p>
-            <p>University of Wollongong in Dubai, UAE (2022-2026)</p>
-            <p><em>Secondary Education:</em> Sheffield Private School & Deira International School</p>
+            <h2>Academic Track Record</h2>
+            <div class="edu-wrapper">
+                <div class="edu-item">
+                    <div>
+                        <strong>University of Wollongong in Dubai</strong>
+                        <p style="color: #6e6e73; font-size: 0.95rem; margin-top: 2px;">Bachelor of Engineering (Honours) Computer Engineering</p>
+                    </div>
+                    <div style="font-weight: 600;">2022 — 2026</div>
+                </div>
+                <div class="edu-item">
+                    <div>
+                        <strong>Secondary Education Foundations</strong>
+                        <p style="color: #6e6e73; font-size: 0.95rem; margin-top: 2px;">Sheffield Private School & Deira International School</p>
+                    </div>
+                    <div style="color: #6e6e73; font-size: 0.95rem;">Dubai, UAE</div>
+                </div>
+            </div>
         </section>
 
-        <!-- Contacts block interface -->
+        <!-- Contact anchor elements dashboard links -->
         <section id="contact">
             <h2>Get In Touch</h2>
             <div class="contact-box">
-                <p><strong>Email:</strong> <a href="mailto:j3javv@gmail.com">j3javv@gmail.com</a></p>
-                <p><strong>Phone:</strong> +971 503544598</p>
-                <p><strong>GitHub:</strong> <a href="https://github.com" target="_blank">://github.com</a></p>
+                <a href="mailto:j3javv@gmail.com" class="contact-card">📧 Email: j3javv@gmail.com</a>
+                <a href="tel:+971503544598" class="contact-card">📞 Call: +971 503544598</a>
+                <a href="https://github.com" target="_blank" class="contact-card">💻 GitHub Profile</a>
             </div>
         </section>
     </div>
