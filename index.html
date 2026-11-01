@@ -83,7 +83,7 @@
         /* Reveal Scroll Animation Triggers */
         .reveal-section {
             opacity: 0;
-            transform: translateY(40px) scale(0.98);
+            transform: translateY(30px) scale(0.99);
             transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), 
                         transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
         }
@@ -93,9 +93,9 @@
             transform: translateY(0) scale(1);
         }
 
-        /* Interactive Profile Hero Section */
+        /* Profile Hero Section - Loads instantly without transparency block bug */
         .hero {
-            min-height: 80vh;
+            min-height: 75vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -350,5 +350,3 @@
         </div>
     </nav>
 
-    <main class="container">
-        <!-- Section 1: Introduction (Hero Panel) -->
