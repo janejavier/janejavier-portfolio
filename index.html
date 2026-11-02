@@ -1,517 +1,706 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jane Frances Adolar Javier</title>
     
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://w3.org' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230066cc'/%3E%3Ctext x='50%25' y='66%25' font-family='sans-serif' font-weight='700' font-size='50' fill='%23ffffff' text-anchor='middle'%3EJJ%3C/text%3E%3C/svg%3E?v=3">
+    <!-- Custom Blue Tab Icon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230066cc'/%3E%3Ctext x='50%25' y='66%25' font-family='-apple-system, sans-serif' font-weight='700' font-size='50' fill='%23ffffff' text-anchor='middle'%3EJJ%3C/text%3E%3C/svg%3E">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        appleBlue: '#0066cc',
+                        appleHoverBlue: '#0055b3',
+                        appleDark: '#1d1d1f',
+                        appleGray: '#f5f5f7',
+                        appleTextSubtle: '#6e6e73',
+                        appleBorder: '#d2d2d7'
+                    },
+                    fontFamily: {
+                        sans: ['-apple-system', 'BlinkMacSystemFont', '"SF Pro Display"', '"SF Pro Text"', '"Segoe UI"', 'Roboto', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-            color: #1d1d1f;
             background-color: #ffffff;
-            line-height: 1.6;
-            padding: 20px;
-        }
-        .container {
-            max-width: 850px;
-            margin: 0 auto;
-        }
-        nav {
-            padding: 20px 0;
-            border-bottom: 2px solid #0066cc;
-            margin-bottom: 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo {
-            font-weight: bold;
-            color: #0066cc;
-            font-size: 1.1rem;
-        }
-        .links a {
-            margin-left: 20px;
-            color: #424245;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        .links a:hover {
-            color: #0066cc;
-        }
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 15px;
-            letter-spacing: -0.03em;
-        }
-        h1 span {
-            color: #0066cc;
-        }
-        h2 {
-            font-size: 2rem;
             color: #1d1d1f;
-            margin: 50px 0 25px 0;
-            border-bottom: 1px solid #d2d2d7;
-            padding-bottom: 8px;
-            letter-spacing: -0.02em;
+            -webkit-font-smoothing: antialiased;
         }
-        p {
-            margin-bottom: 15px;
-            color: #424245;
-            font-size: 1.1rem;
-        }
-        .project-card {
-            background: #f5f5f7;
-            border: 1px solid #d2d2d7;
-            padding: 30px;
-            margin-bottom: 30px;
-            border-radius: 16px;
-        }
-        .project-card h3 {
-            font-size: 1.4rem;
-            color: #1d1d1f;
-            margin-bottom: 10px;
-        }
-        .project-card p {
-            font-size: 1rem;
-            color: #6e6e73;
-        }
-        .tag-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-top: 15px;
-            margin-bottom: 15px;
-        }
-        .tag {
-            background: #ffffff;
-            border: 1px solid rgba(0,0,0,0.08);
-            color: #1d1d1f;
-            font-size: 0.82rem;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-weight: 500;
-        }
-        .edu-wrapper, .exp-wrapper {
-            background: #f5f5f7;
-            border: 1px solid #d2d2d7;
-            padding: 30px;
-            border-radius: 16px;
-            margin-bottom: 30px;
-        }
-        .edu-item, .exp-item {
-            padding: 15px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .edu-item:first-child, .exp-item:first-child { padding-top: 0; }
-        .edu-item:not(:last-child), .exp-item:not(:last-child) { border-bottom: 1px solid #d2d2d7; }
-        
-        .contact-box {
-            background: #f5f5f7;
-            border: 1px solid #d2d2d7;
-            padding: 30px;
-            border-radius: 16px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-        }
-        .contact-card {
-            background: #ffffff;
-            padding: 15px;
-            border-radius: 8px;
-            border: 1px solid #d2d2d7;
-            text-decoration: none;
-            color: #1d1d1f;
-            font-weight: 600;
-            text-align: center;
-        }
-        .contact-card:hover {
-            background: #e8e8ed;
-            color: #0066cc;
-        }
-        .btn {
-            display: inline-flex;
-            background: #0066cc;
-            color: #fff;
-            padding: 12px 28px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 600;
-            margin-top: 15px;
-            cursor: pointer;
-            border: none;
-        }
-        .btn:hover { background: #0056b3; }
-        .btn-secondary {
-            background: #e8e8ed;
-            color: #1d1d1f;
-            padding: 8px 18px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            border: none;
-            cursor: pointer;
-            display: inline-block;
-            margin-top: 10px;
-            text-decoration: none;
-        }
-        .btn-secondary:hover { background: #d2d2d7; }
 
-        /* Modal styling */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.5);
-            backdrop-filter: blur(5px);
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
+        /* Apple Frosted Glass Nav */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
         }
-        .modal-content {
-            background: #ffffff;
-            padding: 40px;
-            border-radius: 20px;
-            max-width: 650px;
-            width: 100%;
-            max-height: 85vh;
-            overflow-y: auto;
-            position: relative;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
-        .close-btn {
-            position: absolute;
-            top: 20px;
-            right: 25px;
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #86868b;
-            cursor: pointer;
-        }
-        .close-btn:hover { color: #1d1d1f; }
-        .modal-content h3 { font-size: 1.8rem; margin-bottom: 15px; color: #1d1d1f; }
-        .modal-content h4 { font-size: 1.2rem; margin: 20px 0 10px 0; color: #0066cc; }
-        .modal-content ul { margin-left: 20px; color: #424245; margin-bottom: 15px; }
-        .modal-content li { margin-bottom: 8px; }
 
-        @media (max-width: 600px) {
-            h1 { font-size: 2.2rem; }
-            h2 { font-size: 1.6rem; }
-            .edu-item, .exp-item { flex-direction: column; align-items: flex-start; gap: 6px; }
-            .contact-box { grid-template-columns: 1fr; }
+        /* Apple Style Card */
+        .apple-card {
+            background: #f5f5f7;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .apple-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            border-color: rgba(0, 102, 204, 0.3);
+        }
+
+        /* Scroll Reveal Effect */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Modal Overlay Backdrop */
+        .modal-backdrop {
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(6px);
         }
     </style>
 </head>
-<body>
+<body class="font-sans antialiased selection:bg-appleBlue selection:text-white">
 
-    <div class="container">
-        <!-- Navigation Header -->
-        <nav>
-            <div class="logo">janejavier.com</div>
-            <div class="links">
-                <a href="#about">About</a>
-                <a href="#projects">Projects</a>
-                <a href="#experience">Experience</a>
-                <a href="#education">Education</a>
-                <a href="#contact">Contact</a>
+    <!-- Sticky Header Navigation -->
+    <header class="fixed top-0 left-0 w-full z-50 glass-nav">
+        <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
+            <a href="#hero" class="flex items-center space-x-2 font-bold text-sm tracking-tight text-appleDark">
+                <span class="text-appleBlue">janejavier.com</span>
+            </a>
+
+            <!-- Desktop Links -->
+            <nav class="hidden md:flex items-center space-x-7 text-xs font-medium text-gray-600">
+                <a href="#about" class="hover:text-appleBlue transition-colors">About</a>
+                <a href="#projects" class="hover:text-appleBlue transition-colors">Projects</a>
+                <a href="#experience" class="hover:text-appleBlue transition-colors">Experience</a>
+                <a href="#skills" class="hover:text-appleBlue transition-colors">Skills</a>
+                <a href="#education" class="hover:text-appleBlue transition-colors">Education</a>
+                <a href="#contact" class="hover:text-appleBlue transition-colors">Contact</a>
+            </nav>
+
+            <a href="mailto:j3javv@gmail.com" class="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-appleBlue text-white hover:bg-appleHoverBlue transition-colors">
+                Email Me
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-14">
+
+        <!-- Hero Section -->
+        <section id="hero" class="min-h-[75vh] flex flex-col justify-center items-center text-center px-6 py-16 bg-white">
+            <div class="max-w-3xl mx-auto space-y-6 reveal active">
+                
+                <span class="inline-block px-3.5 py-1.5 rounded-full bg-appleGray text-xs font-medium text-appleTextSubtle border border-black/5">
+                    Computer and Autonomous Systems Engineering Honours Graduate
+                </span>
+
+                <h1 class="text-4xl sm:text-6xl font-bold text-appleDark tracking-tight leading-tight">
+                    Jane Frances Adolar Javier
+                </h1>
+
+                <p class="text-base sm:text-lg text-gray-600 font-normal max-w-2xl mx-auto leading-relaxed">
+                    Honours engineering graduate from the <strong class="text-appleDark">University of Wollongong in Dubai</strong>. Specializing in robotics architectures, dynamic sensor matrices, microcontrollers, and logic tracking systems.
+                </p>
+
+                <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
+                    <a href="mailto:j3javv@gmail.com" class="w-full sm:w-auto px-6 py-2.5 rounded-full bg-appleBlue text-white font-medium text-sm hover:bg-appleHoverBlue transition-colors flex items-center justify-center space-x-2">
+                        <i class="fa-regular fa-envelope"></i>
+                        <span>j3javv@gmail.com</span>
+                    </a>
+                    <a href="tel:+971503544598" class="w-full sm:w-auto px-6 py-2.5 rounded-full bg-appleGray text-appleDark font-medium text-sm hover:bg-gray-200 transition-colors flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+971 503544598</span>
+                    </a>
+                </div>
+
             </div>
-        </nav>
+        </section>
 
         <!-- About Section -->
-        <section id="about">
-            <h1>Hi, I am <span>Jane Javier</span></h1>
-            <p>Reliable Computer Engineering student and professional with technical strengths across robotics architectures, integrated hardware firmware design, and algorithmic system diagnostics. Skilled at analyzing sensory interfaces, solving system feedback dependencies, and executing engineering plans[cite: 1].</p>
-            <a href="mailto:j3javv@gmail.com" class="btn">Email Me Directly</a>
-        </section>
+        <section id="about" class="py-16 px-6 bg-appleGray border-t border-black/5">
+            <div class="max-w-4xl mx-auto space-y-6 reveal">
+                <div>
+                    <h2 class="text-xs font-semibold text-appleBlue uppercase tracking-wider mb-2">About Me</h2>
+                    <h3 class="text-2xl sm:text-3xl font-bold text-appleDark tracking-tight">
+                        Engineered precision, built for practical solutions.
+                    </h3>
+                </div>
 
-        <!-- Projects Section -->
-        <section id="projects">
-            <h2>Featured Engineering Projects</h2>
-            
-            <!-- Project 1 -->
-            <div class="project-card">
-                <h3>Voice Controlled Braille Learning Kit</h3>
-                <p>Designed a portable assistive education tool engineered inside a physical structure matching an iPhone form factor to aid visually impaired learners. Built state logic tracking paths using discrete D flip-flops, an Arduino board to map dynamic output solenoids, and a Raspberry Pi module to run real time voice capture APIs[cite: 2].</p>
-                <div class="tag-container">
-                    <span class="tag">Raspberry Pi</span>
-                    <span class="tag">Arduino Core</span>
-                    <span class="tag">C++ Logic</span>
-                    <span class="tag">Circuit Analysis</span>
-                </div>
-                <button class="btn-secondary" onclick="openModal('modal1')">View Technical Specs</button>
-            </div>
-
-            <!-- Project 2 -->
-            <div class="project-card">
-                <h3>SoleMate Smart Biometric Insole</h3>
-                <p>Developed an embedded biometric shoe layer utilizing piezoelectric sensor paths to chart kinetic footprint pressures. Collects force matrix parameters via an ESP32 processing chip to calculate physical step indicators, monitor walking gait slants, and generates structural load heatmap configurations using MATLAB scripts[cite: 2].</p>
-                <div class="tag-container">
-                    <span class="tag">ESP32 Core</span>
-                    <span class="tag">MATLAB Scripts</span>
-                    <span class="tag">Piezo Sensors</span>
-                    <span class="tag">Biometrics</span>
-                </div>
-                <button class="btn-secondary" onclick="openModal('modal2')">View Architecture & Heatmaps</button>
-            </div>
-
-            <!-- Project 3 -->
-            <div class="project-card">
-                <h3>Autonomous Robot Target Detection Node</h3>
-                <p>Programmed an operational target identification and isolation script running in the ROS platform via HSV color dimension modeling. Deployed precise camera masking filters and matrix boundary classifications on mobile TurtleBot hardware configurations to execute live route obstruction mapping[cite: 2].</p>
-                <div class="tag-container">
-                    <span class="tag">ROS Architecture</span>
-                    <span class="tag">OpenCV HSV</span>
-                    <span class="tag">TurtleBot Camera</span>
-                    <span class="tag">C++ Node</span>
-                </div>
-                <button class="btn-secondary" onclick="openModal('modal3')">View ROS Vision Node Details</button>
-            </div>
-
-            <!-- Project 4 -->
-            <div class="project-card">
-                <h3>Webots Mobile Robot Simulation</h3>
-                <p>Engineered autonomous mobile robot simulation environments within Webots. Programmed sensor feedback loops and movement controllers for line following and intelligent maze navigation tasks[cite: 2].</p>
-                <div class="tag-container">
-                    <span class="tag">Webots Simulator</span>
-                    <span class="tag">Python Controllers</span>
-                    <span class="tag">Proximity Sensors</span>
-                    <span class="tag">Autonomous Navigation</span>
-                </div>
-                <button class="btn-secondary" onclick="openModal('modal4')">View Simulation Details</button>
-            </div>
-
-            <!-- Project 5 -->
-            <div class="project-card">
-                <h3>Robotic Arm Kinematics & MeQube Line Tracker</h3>
-                <p>Implemented direct and inverse kinematics solvers in MATLAB GUIs to control robotic arm positioning matrices (T and Q matrices). Integrated hardware pick and place workflows alongside MeQube line tracking obstacle course navigation[cite: 2].</p>
-                <div class="tag-container">
-                    <span class="tag">MATLAB GUI</span>
-                    <span class="tag">Kinematics</span>
-                    <span class="tag">Dobot / Robotic Arm</span>
-                    <span class="tag">Line Tracking</span>
-                </div>
-                <button class="btn-secondary" onclick="openModal('modal5')">View Kinematics & MeQube Specs</button>
-            </div>
-
-            <!-- Project 6 -->
-            <div class="project-card">
-                <h3>MOSFET High Current LED Control Circuit</h3>
-                <p>Designed and simulated power switching circuits using IRFZ44N N channel MOSFET components on breadboards and Arduino microcontrollers to safely regulate high current LED arrays and art installations[cite: 2].</p>
-                <div class="tag-container">
-                    <span class="tag">IRFZ44N MOSFET</span>
-                    <span class="tag">Arduino UNO</span>
-                    <span class="tag">Breadboard Circuitry</span>
-                    <span class="tag">Power Switching</span>
-                </div>
-                <button class="btn-secondary" onclick="openModal('modal6')">View Circuit Schematics</button>
-            </div>
-
-            <!-- Project 7 -->
-            <div class="project-card">
-                <h3>Java Systems & Object Oriented Development</h3>
-                <p>Developed robust software modules utilizing object oriented programming principles, customized data structures, and algorithmic logic optimization for application utility[cite: 2].</p>
-                <div class="tag-container">
-                    <span class="tag">Java OOP</span>
-                    <span class="tag">Data Structures</span>
-                    <span class="tag">Algorithm Logic</span>
-                    <span class="tag">Software Modules</span>
-                </div>
-                <button class="btn-secondary" onclick="openModal('modal7')">View Software Details</button>
-            </div>
-        </section>
-
-        <!-- Experience Section -->
-        <section id="experience">
-            <h2>Professional Experience</h2>
-            <div class="exp-wrapper">
-                <div class="exp-item">
-                    <div>
-                        <strong>Retail Sales Associate</strong>
-                        <p style="color: #6e6e73; font-size: 0.95rem; margin-top: 2px;">Al Shaya, Dubai, UAE</p>
-                        <p style="color: #424245; font-size: 0.95rem; margin-top: 5px;">Engaged clients to build long term relationships, operated cash registers with high accuracy for transactions, and provided data driven feedback on market trends[cite: 1].</p>
-                    </div>
-                </div>
-                <div class="exp-item" style="border-top: 1px solid #d2d2d7; padding-top: 15px; margin-top: 15px;">
-                    <div>
-                        <strong>F1 Usher</strong>
-                        <p style="color: #6e6e73; font-size: 0.95rem; margin-top: 2px;">ClassACT, Abu Dhabi, UAE</p>
-                        <p style="color: #424245; font-size: 0.95rem; margin-top: 5px;">Managed ticket scanning and seating arrangements at Yas Marina Circuit F1 events, optimized queue management, and supplied guests with event guidance[cite: 1].</p>
-                    </div>
-                </div>
-                <div class="exp-item" style="border-top: 1px solid #d2d2d7; padding-top: 15px; margin-top: 15px;">
-                    <div>
-                        <strong>Volunteering Teaching Assistant</strong>
-                        <p style="color: #6e6e73; font-size: 0.95rem; margin-top: 2px;">Junkbot Robotics, Sharjah, UAE</p>
-                        <p style="color: #424245; font-size: 0.95rem; margin-top: 5px;">Guided students in building and programming line following robots, facilitated group discussions, and fostered a positive classroom learning environment[cite: 1].</p>
-                    </div>
+                <div class="text-gray-600 text-sm sm:text-base leading-relaxed space-y-4">
+                    <p>
+                        Reliable honours engineering student with technical development experience across robotics architectures, integrated hardware firmware design, and algorithmic system diagnostics. Skilled at analyzing sensory interfaces, solving system feedback dependencies, and executing structured engineering plans.
+                    </p>
+                    <p>
+                        A bilingual team player experienced in technical instruction for line following robotics, queue management for high capacity events like the Yas Marina Circuit F1, and inventory operations in client facing environments.
+                    </p>
                 </div>
             </div>
         </section>
 
-        <!-- Academic History -->
-        <section id="education">
-            <h2>Academic Track Record</h2>
-            <div class="edu-wrapper">
-                <div class="edu-item">
-                    <div>
-                        <strong>University of Wollongong in Dubai</strong>
-                        <p style="color: #6e6e73; font-size: 0.95rem; margin-top: 2px;">Bachelor of Engineering Honours Computer and Autonomous Systems Engineering</p>
-                    </div>
-                    <div style="font-weight: 600;">2022 to 2026[cite: 2]</div>
+        <!-- Featured Engineering Projects Section -->
+        <section id="projects" class="py-20 px-6 bg-white border-t border-black/5">
+            <div class="max-w-4xl mx-auto space-y-10">
+                
+                <div class="reveal">
+                    <h2 class="text-xs font-semibold text-appleBlue uppercase tracking-wider mb-1">Portfolio</h2>
+                    <h3 class="text-2xl sm:text-3xl font-bold text-appleDark tracking-tight">
+                        Engineering Projects
+                    </h3>
                 </div>
-                <div class="edu-item">
-                    <div>
-                        <strong>Secondary Education Foundations</strong>
-                        <p style="color: #6e6e73; font-size: 0.95rem; margin-top: 2px;">Sheffield Private School and Deira International School</p>
+
+                <div class="grid grid-cols-1 gap-6">
+                    
+                    <!-- Project 1: Braille Learning Kit -->
+                    <div class="apple-card p-6 sm:p-8 rounded-2xl reveal space-y-4">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                            <div>
+                                <h4 class="text-xl font-bold text-appleDark">Voice Controlled Braille Learning Kit</h4>
+                                <p class="text-xs text-appleTextSubtle mt-0.5">Assistive Hardware • iPhone Form Factor Prototype</p>
+                            </div>
+                            <button onclick="openModal('modal-braille')" class="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-appleBlue/10 text-appleBlue hover:bg-appleBlue hover:text-white transition-colors self-start sm:self-auto">
+                                Technical Specs & BOM
+                            </button>
+                        </div>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            Designed a portable assistive education tool engineered inside a physical structure matching an iPhone form factor to aid visually impaired learners. Features a Raspberry Pi processing voice commands via Google Voice API and an Arduino board mapping output solenoids using a 4 state D flip flop circuit logic design.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-1">
+                            <span class="px-2.5 py-1 rounded-md bg-white text-xs font-medium text-appleDark border border-black/5">Raspberry Pi</span>
+                            <span class="px-2.5 py-1 rounded-md bg-white text-xs font-medium text-appleDark border border-black/5">Arduino Core</span>
+                            <span class="px-2.5 py-1 rounded-md bg-white text-xs font-medium text-appleDark border border-black/5">D Flip Flop Circuit</span>
+                            <span class="px-2.5 py-1 rounded-md bg-white text-xs font-medium text-appleDark border border-black/5">Solenoid Actuators</span>
+                            <span class="px-2.5 py-1 rounded-md bg-white text-xs font-medium text-appleDark border border-black/5">3D PLA Casing</span>
+                        </div>
                     </div>
-                    <div style="color: #6e6e73; font-size: 0.95rem;">Dubai, UAE[cite: 2]</div>
+
+                    <!-- Project 2: SoleMate Smart Biometric Insole -->
+                    <div class="apple-card p-6 sm:p-8 rounded-2xl reveal space-y-4">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                            <div>
+                                <h4 class="text-xl font-bold text-appleDark">SoleMate Smart Biometric Insole</h4>
+                                <p class="text-xs text-appleTextSubtle mt-0.5">Embedded Biometrics • Gait & Pressure Heatmaps</p>
+                            </div>
+                            <button onclick="openModal('modal-solemate')" class="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-appleBlue/10 text-appleBlue hover:bg-appleBlue hover:text-white transition-colors self-start sm:self-auto">
+                                View Architecture & Heatmaps
+                            </button>
+                        </div>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            Developed an embedded biometric shoe layer utilizing piezoelectric sensor arrays to chart kinetic footprint pressures. Collects force parameters via an ESP32 microchip and MPU6050 IMU to evaluate gait slants, flat foot or high arch indicators, step metrics, and pressure heatmaps in MATLAB.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-1">
+                            <span class="px-2.5 py-1 rounded-md bg-white text-xs font-medium text-appleDark border border-black/5">ESP32 Core</span>
+                            <span class="px-2.5 py-1 rounded-md bg-white text-xs font-medium text-appleDark border border-black/5">Piezo Sensors</span>
+                            <span class="px-2.5 py-1 rounded-md bg-white text-xs font-medium text-appleDark border border-black/5">MATLAB Heatmaps</span>
+                            <span class="px-2.5 py-1 rounded-md bg-white text-xs font-medium text-appleDark border border-black/5">MPU6050 Motion</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: Autonomous Robot Target Detection Node -->
+                    <div class="apple-card p-6 sm:p-8 rounded-2xl reveal space-y-4">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                            <div>
+                                <h4 class="text-xl font-bold text-appleDark">Autonomous Robot Target Detection Node</h4>
+                                <p class="text-xs text-appleTextSubtle mt-0.5">ROS Platform • Computer Vision Masking</p>
+                            </div>
+                            <button onclick="openModal('modal-ros')" class="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-appleBlue/10 text-appleBlue hover:bg-appleBlue hover:text-white transition-colors self-start sm:self-auto">
+                                View ROS Vision Specs
+                            </button>
+                        </div>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            Programmed target identification and isolation scripts running on ROS via HSV color space modeling. Deployed precise OpenCV camera masking filters, trackbar thresholds, and boundary classifications on mobile TurtleBot hardware to map dynamic obstacle paths.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-1">
+                            <span class="px-2.5 py-1 rounded-md bg-white text-xs font-medium text-appleDark border border-black/5">ROS Architecture</span>
+                            <span class="px-2.5 py-1 rounded-md bg-white text-xs font-medium text-appleDark border border-black/5">OpenCV HSV</span>
+                            <span class="px-2.5 py-1 rounded-md bg-white text-xs font-medium text-appleDark border border-black/5">TurtleBot Hardware</span>
+                            <span class="px-2.5 py-1 rounded-md bg-white text-xs font-medium text-appleDark border border-black/5">C++ Node</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: Webots Mobile Robot Simulation -->
+                    <div class="apple-card p-6 sm:p-8 rounded-2xl reveal space-y-4">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                            <div>
+                                <h4 class="text-xl font-bold text-appleDark">Webots Autonomous Mobile Robot Simulation</h4>
+                                <p class="text-xs text-appleTextSubtle mt-0.5">3D Robotics Simulation • Maze & Line Navigation</p>
+                            </div>
+                            <button onclick="openModal('modal-webots')" class="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-appleBlue/10 text-appleBlue hover:bg-appleBlue hover:text-white transition-colors self-start sm:self-auto">
+                                View Simulation Details
+                            </button>
+                        </div>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            Engineered simulated mobile robotic agents within the Webots environment to execute path planning algorithms, real time line trajectory tracking, and collision free obstacle avoidance maneuvering across custom test fields.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-1">
+                            <span class="px-2.5 py-1 rounded-md bg-white text-xs font-medium text-appleDark border border-black/5">Webots Simulator</span>
+                            <span class="px-2.5 py-1 rounded-md bg-white text-xs font-medium text-appleDark border border-black/5">Path Planning</span>
+                            <span class="px-2.5 py-1 rounded-md bg-white text-xs font-medium text-appleDark border border-black/5">Sensory Feedback</span>
+                            <span class="px-2.5 py-1 rounded-md bg-white text-xs font-medium text-appleDark border border-black/5">Autonomous Navigation</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 5: Robotic Arm Kinematics & MeQube -->
+                    <div class="apple-card p-6 sm:p-8 rounded-2xl reveal space-y-4">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                            <div>
+                                <h4 class="text-xl font-bold text-appleDark">Robotic Arm Kinematics & MeQube Line Tracker</h4>
+                                <p class="text-xs text-appleTextSubtle mt-0.5">MATLAB GUI Simulation & Physical Pick and Place Hardware</p>
+                            </div>
+                            <button onclick="openModal('modal-kinematics')" class="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-appleBlue/10 text-appleBlue hover:bg-appleBlue hover:text-white transition-colors self-start sm:self-auto">
+                                View Kinematics Specs
+                            </button>
+                        </div>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            Built a MATLAB GUI for forward and inverse kinematics modeling of 6 DOF robotic arms alongside Dobot Magician pick and place automation. Coupled with physical hardware experiments testing line following sensors and obstacle course navigation on mobile platforms.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-1">
+                            <span class="px-2.5 py-1 rounded-md bg-white text-xs font-medium text-appleDark border border-black/5">MATLAB Kinematics</span>
+                            <span class="px-2.5 py-1 rounded-md bg-white text-xs font-medium text-appleDark border border-black/5">Dobot Magician</span>
+                            <span class="px-2.5 py-1 rounded-md bg-white text-xs font-medium text-appleDark border border-black/5">Pick and Place</span>
+                            <span class="px-2.5 py-1 rounded-md bg-white text-xs font-medium text-appleDark border border-black/5">Line Following Hardware</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 6: MOSFET Pulsed LED Switching -->
+                    <div class="apple-card p-6 sm:p-8 rounded-2xl reveal space-y-4">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                            <div>
+                                <h4 class="text-xl font-bold text-appleDark">MOSFET Pulsed LED Switching Circuit</h4>
+                                <p class="text-xs text-appleTextSubtle mt-0.5">Power Electronics & Microcontroller PWM Control</p>
+                            </div>
+                            <button onclick="openModal('modal-mosfet')" class="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-appleBlue/10 text-appleBlue hover:bg-appleBlue hover:text-white transition-colors self-start sm:self-auto">
+                                View Circuit Details
+                            </button>
+                        </div>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            Designed power switching circuits utilizing IRFZ44N N channel MOSFET transistors driven by ESP32 and Arduino PWM outputs. Simulated pin gate connections and current flows in Tinkercad prior to physical breadboard prototyping.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-1">
+                            <span class="px-2.5 py-1 rounded-md bg-white text-xs font-medium text-appleDark border border-black/5">IRFZ44N MOSFET</span>
+                            <span class="px-2.5 py-1 rounded-md bg-white text-xs font-medium text-appleDark border border-black/5">PWM Logic</span>
+                            <span class="px-2.5 py-1 rounded-md bg-white text-xs font-medium text-appleDark border border-black/5">Circuit Simulation</span>
+                            <span class="px-2.5 py-1 rounded-md bg-white text-xs font-medium text-appleDark border border-black/5">ESP32 / Arduino</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 7: Java Object Oriented System Modules -->
+                    <div class="apple-card p-6 sm:p-8 rounded-2xl reveal space-y-4">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                            <div>
+                                <h4 class="text-xl font-bold text-appleDark">Java Object Oriented Software Modules</h4>
+                                <p class="text-xs text-appleTextSubtle mt-0.5">Software Engineering & System Architecture</p>
+                            </div>
+                            <button onclick="openModal('modal-java')" class="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-appleBlue/10 text-appleBlue hover:bg-appleBlue hover:text-white transition-colors self-start sm:self-auto">
+                                View Software Specs
+                            </button>
+                        </div>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            Structured object oriented Java applications incorporating modular class hierarchies, algorithmic state evaluation, and clean diagnostic output logging for system level verification.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-1">
+                            <span class="px-2.5 py-1 rounded-md bg-white text-xs font-medium text-appleDark border border-black/5">Java Core</span>
+                            <span class="px-2.5 py-1 rounded-md bg-white text-xs font-medium text-appleDark border border-black/5">OOP Design</span>
+                            <span class="px-2.5 py-1 rounded-md bg-white text-xs font-medium text-appleDark border border-black/5">Algorithmic Logic</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Experience Section -->
+        <section id="experience" class="py-20 px-6 bg-appleGray border-t border-black/5">
+            <div class="max-w-4xl mx-auto space-y-8 reveal">
+                <div>
+                    <h2 class="text-xs font-semibold text-appleBlue uppercase tracking-wider mb-1">Career & Background</h2>
+                    <h3 class="text-2xl sm:text-3xl font-bold text-appleDark tracking-tight">Professional Experience</h3>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 sm:p-8 border border-black/5 divide-y divide-gray-100">
+                    
+                    <!-- Role 1 -->
+                    <div class="pb-6 space-y-2">
+                        <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-1">
+                            <h4 class="text-base font-bold text-appleDark">Volunteering Teaching Assistant</h4>
+                            <span class="text-xs text-appleBlue font-medium">Junkbot Robotics | Sharjah, UAE</span>
+                        </div>
+                        <ul class="text-xs text-gray-600 space-y-1 list-disc pl-4 leading-relaxed">
+                            <li>Guided students in assembling, wiring, and programming line following mobile robots.</li>
+                            <li>Facilitated interactive troubleshooting discussions to enhance student learning and engagement.</li>
+                            <li>Fostered an open classroom environment emphasizing practical problem solving.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Role 2 -->
+                    <div class="py-6 space-y-2">
+                        <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-1">
+                            <h4 class="text-base font-bold text-appleDark">F1 Usher</h4>
+                            <span class="text-xs text-appleBlue font-medium">ClassACT | Abu Dhabi, UAE</span>
+                        </div>
+                        <ul class="text-xs text-gray-600 space-y-1 list-disc pl-4 leading-relaxed">
+                            <li>Managed seating arrangements and digital ticket scanning at the Yas Marina Circuit F1 event.</li>
+                            <li>Optimized venue queue management to effectively minimize guest wait times during high capacity entry.</li>
+                            <li>Provided comprehensive event and facility guidance to international guests.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Role 3 -->
+                    <div class="pt-6 space-y-2">
+                        <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-1">
+                            <h4 class="text-base font-bold text-appleDark">Retail Sales Associate</h4>
+                            <span class="text-xs text-appleBlue font-medium">Al Shaya | Dubai, UAE</span>
+                        </div>
+                        <ul class="text-xs text-gray-600 space-y-1 list-disc pl-4 leading-relaxed">
+                            <li>Managed inventory operations, queue control, and cash register transactions with high accuracy.</li>
+                            <li>Engaged clients to build long term relationships from initial welcome to after sales service.</li>
+                            <li>Provided management with data driven feedback regarding market trends and customer activity.</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Skills Matrix Section -->
+        <section id="skills" class="py-20 px-6 bg-white border-t border-black/5">
+            <div class="max-w-4xl mx-auto space-y-8 reveal">
+                <div>
+                    <h2 class="text-xs font-semibold text-appleBlue uppercase tracking-wider mb-1">Competencies</h2>
+                    <h3 class="text-2xl sm:text-3xl font-bold text-appleDark tracking-tight">Technical Skills Stack</h3>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    
+                    <div class="apple-card p-6 rounded-xl space-y-3">
+                        <h4 class="text-xs font-bold text-appleBlue uppercase tracking-wider">Programming Languages</h4>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="px-2.5 py-1 bg-white text-xs font-medium text-appleDark rounded border border-black/5">Python</span>
+                            <span class="px-2.5 py-1 bg-white text-xs font-medium text-appleDark rounded border border-black/5">C / C++</span>
+                            <span class="px-2.5 py-1 bg-white text-xs font-medium text-appleDark rounded border border-black/5">Java</span>
+                            <span class="px-2.5 py-1 bg-white text-xs font-medium text-appleDark rounded border border-black/5">ROS / ROS2</span>
+                            <span class="px-2.5 py-1 bg-white text-xs font-medium text-appleDark rounded border border-black/5">MATLAB</span>
+                        </div>
+                    </div>
+
+                    <div class="apple-card p-6 rounded-xl space-y-3">
+                        <h4 class="text-xs font-bold text-appleBlue uppercase tracking-wider">Hardware & Embedded</h4>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="px-2.5 py-1 bg-white text-xs font-medium text-appleDark rounded border border-black/5">ESP32</span>
+                            <span class="px-2.5 py-1 bg-white text-xs font-medium text-appleDark rounded border border-black/5">Raspberry Pi</span>
+                            <span class="px-2.5 py-1 bg-white text-xs font-medium text-appleDark rounded border border-black/5">Arduino Core</span>
+                            <span class="px-2.5 py-1 bg-white text-xs font-medium text-appleDark rounded border border-black/5">D Flip Flops</span>
+                            <span class="px-2.5 py-1 bg-white text-xs font-medium text-appleDark rounded border border-black/5">Piezo Arrays</span>
+                            <span class="px-2.5 py-1 bg-white text-xs font-medium text-appleDark rounded border border-black/5">OpenCV HSV</span>
+                            <span class="px-2.5 py-1 bg-white text-xs font-medium text-appleDark rounded border border-black/5">WeBots</span>
+                            <span class="px-2.5 py-1 bg-white text-xs font-medium text-appleDark rounded border border-black/5">3D PLA Modeling</span>
+                        </div>
+                    </div>
+
+                    <div class="apple-card p-6 rounded-xl space-y-3">
+                        <h4 class="text-xs font-bold text-appleBlue uppercase tracking-wider">Operations & Soft Skills</h4>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="px-2.5 py-1 bg-white text-xs font-medium text-appleDark rounded border border-black/5">Robotics Instruction</span>
+                            <span class="px-2.5 py-1 bg-white text-xs font-medium text-appleDark rounded border border-black/5">System Diagnostics</span>
+                            <span class="px-2.5 py-1 bg-white text-xs font-medium text-appleDark rounded border border-black/5">Inventory Control</span>
+                            <span class="px-2.5 py-1 bg-white text-xs font-medium text-appleDark rounded border border-black/5">Queue Management</span>
+                            <span class="px-2.5 py-1 bg-white text-xs font-medium text-appleDark rounded border border-black/5">Bilingual Communication</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Academic History Section -->
+        <section id="education" class="py-20 px-6 bg-appleGray border-t border-black/5">
+            <div class="max-w-4xl mx-auto space-y-8 reveal">
+                <div>
+                    <h2 class="text-xs font-semibold text-appleBlue uppercase tracking-wider mb-1">Education</h2>
+                    <h3 class="text-2xl sm:text-3xl font-bold text-appleDark tracking-tight">Academic Credentials</h3>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 sm:p-8 border border-black/5 space-y-6">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-gray-100 pb-6">
+                        <div>
+                            <h4 class="text-lg font-bold text-appleDark">University of Wollongong in Dubai</h4>
+                            <p class="text-sm text-gray-600 mt-1">Bachelor of Engineering (Honours) Computer and Autonomous Systems Engineering</p>
+                        </div>
+                        <span class="text-xs font-bold text-appleBlue bg-appleBlue/10 px-3 py-1 rounded-full self-start sm:self-auto">2022 to 2026</span>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                        <div>
+                            <h4 class="text-base font-semibold text-appleDark">Secondary Education</h4>
+                            <p class="text-sm text-gray-500 mt-0.5">Sheffield Private School & Deira International School</p>
+                        </div>
+                        <span class="text-xs text-appleTextSubtle">Dubai, UAE</span>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact">
-            <h2>Get In Touch</h2>
-            <div class="contact-box">
-                <a href="mailto:j3javv@gmail.com" class="contact-card">Email: j3javv@gmail.com[cite: 1]</a>
-                <a href="tel:+971503544598" class="contact-card">Call: +971 503544598[cite: 1]</a>
+        <section id="contact" class="py-24 px-6 bg-white border-t border-black/5">
+            <div class="max-w-2xl mx-auto text-center space-y-8 reveal">
+                
+                <div class="space-y-2">
+                    <h2 class="text-xs font-semibold text-appleBlue uppercase tracking-wider">Connect</h2>
+                    <h3 class="text-3xl sm:text-4xl font-bold text-appleDark tracking-tight">Get In Touch</h3>
+                    <p class="text-sm text-gray-500">
+                        Reach out directly via email or telephone.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <a href="mailto:j3javv@gmail.com" class="apple-card p-5 rounded-xl flex items-center justify-center space-x-3 text-sm font-semibold text-appleDark hover:text-appleBlue">
+                        <i class="fa-regular fa-envelope text-appleBlue"></i>
+                        <span>j3javv@gmail.com</span>
+                    </a>
+
+                    <a href="tel:+971503544598" class="apple-card p-5 rounded-xl flex items-center justify-center space-x-3 text-sm font-semibold text-appleDark hover:text-appleBlue">
+                        <i class="fa-solid fa-phone text-appleBlue"></i>
+                        <span>+971 503544598</span>
+                    </a>
+                </div>
+
+                <div class="pt-2 flex justify-center">
+                    <button onclick="copyEmail()" class="px-6 py-2.5 rounded-full bg-appleGray text-xs font-semibold text-appleDark hover:bg-gray-200 transition-colors flex items-center space-x-2 border border-black/5">
+                        <i class="fa-regular fa-copy"></i>
+                        <span>Copy Email Address</span>
+                    </button>
+                </div>
+
             </div>
         </section>
-    </div>
 
-    <!-- MODALS FOR PROJECTS -->
-    <div id="modal1" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal('modal1')">&times;</span>
-            <h3>Voice Controlled Braille Learning Kit</h3>
-            <p>A portable assistive education tool designed for visually impaired learners, sized comparably to an iPhone[cite: 2].</p>
-            <h4>Key Architecture & Logic</h4>
-            <ul>
-                <li>State Machine States: Q0 (00, power off, no movement), Q1 (01, power on, no movement), Q2 (11, power on, button movement), Q3 (10, button movement while power off)[cite: 2].</li>
-                <li>Uses dual D flip-flops to remember current state and combinatorial logic gates for next state transitions[cite: 2].</li>
-                <li>Raspberry Pi handles Google Voice API recognition libraries via external sound card and microphone[cite: 2].</li>
-                <li>Arduino Uno processes commands and controls 6 solenoid actuators fitted with IN4007 flyback diodes[cite: 2].</li>
-            </ul>
-            <h4>Production Cost Breakdown</h4>
-            <ul>
-                <li>Raspberry Pi: 130 AED[cite: 2]</li>
-                <li>Arduino Uno: 60 AED[cite: 2]</li>
-                <li>Solenoid Actuators (x6): 108 AED[cite: 2]</li>
-                <li>Sound Card & Microphone: 60 AED[cite: 2]</li>
-                <li>SD Card & Diodes: 24 AED[cite: 2]</li>
-                <li>Total Estimated Kit Cost: 382 AED[cite: 2]</li>
-            </ul>
+    </main>
+
+    <!-- Modal 1: Braille Kit Specs -->
+    <div id="modal-braille" class="fixed inset-0 z-50 hidden flex items-center justify-center p-6 modal-backdrop">
+        <div class="bg-white max-w-lg w-full rounded-2xl p-6 space-y-4 shadow-2xl border border-black/5">
+            <div class="flex justify-between items-center border-b border-gray-100 pb-3">
+                <h4 class="font-bold text-appleDark text-base">Braille Learning Kit Specifications</h4>
+                <button onclick="closeModal('modal-braille')" class="text-gray-400 hover:text-appleDark"><i class="fa-solid fa-xmark text-base"></i></button>
+            </div>
+            <div class="space-y-3 text-xs text-gray-600 leading-relaxed max-h-[60vh] overflow-y-auto pr-1">
+                <p><strong>System Architecture:</strong> Designed around an iPhone sized 3D printed PLA case with recessed dome sockets for 6 solenoid actuators and a speech activation push button.</p>
+                <p><strong>D Flip Flop Logic States:</strong></p>
+                <ul class="list-disc pl-4 space-y-1 text-gray-500">
+                    <li>Q0 (00): System powered OFF, no pin movement.</li>
+                    <li>Q1 (01): System powered ON, no active movement.</li>
+                    <li>Q2 (11): Power ON with active solenoid button movement (Voice + Button active).</li>
+                    <li>Q3 (10): Button press without voice command (Initiates device shutdown sequence).</li>
+                </ul>
+                <p><strong>Production Bill of Materials (Total: 382 AED):</strong></p>
+                <table class="w-full text-left border-collapse border border-gray-200 my-2">
+                    <thead>
+                        <tr class="bg-gray-50">
+                            <th class="p-1.5 border border-gray-200">Component</th>
+                            <th class="p-1.5 border border-gray-200">Function</th>
+                            <th class="p-1.5 border border-gray-200">Cost</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="p-1.5 border border-gray-200">Raspberry Pi</td><td class="p-1.5 border border-gray-200">Speech processing & API</td><td class="p-1.5 border border-gray-200">130 AED</td></tr>
+                        <tr><td class="p-1.5 border border-gray-200">Arduino Uno</td><td class="p-1.5 border border-gray-200">Actuator mapping logic</td><td class="p-1.5 border border-gray-200">60 AED</td></tr>
+                        <tr><td class="p-1.5 border border-gray-200">6x Solenoids</td><td class="p-1.5 border border-gray-200">Actuate Braille pins</td><td class="p-1.5 border border-gray-200">108 AED</td></tr>
+                        <tr><td class="p-1.5 border border-gray-200">SD / Mic / Audio</td><td class="p-1.5 border border-gray-200">Libraries & Voice capture</td><td class="p-1.5 border border-gray-200">79 AED</td></tr>
+                        <tr><td class="p-1.5 border border-gray-200">Diodes 1N4007</td><td class="p-1.5 border border-gray-200">Flyback solenoid protection</td><td class="p-1.5 border border-gray-200">5 AED</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="pt-2 text-right">
+                <button onclick="closeModal('modal-braille')" class="px-4 py-2 rounded-full bg-appleGray text-xs font-semibold text-appleDark">Close Specs</button>
+            </div>
         </div>
     </div>
 
-    <div id="modal2" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal('modal2')">&times;</span>
-            <h3>SoleMate Smart Biometric Insole</h3>
-            <p>An intelligent shoe insert tracking foot pressure distribution, gait slants, step counts, and calories burned[cite: 2].</p>
-            <h4>Technical Components & Workflow</h4>
-            <ul>
-                <li>Processing Core: ESP32 microcontroller unit[cite: 2].</li>
-                <li>Sensors: Piezoelectric force sensor arrays and MPU6050 accelerometer/gyroscope modules[cite: 2].</li>
-                <li>Software Modeling: Blender used for component placement prototyping and MATLAB scripts to render high resolution pressure distribution heatmaps[cite: 2].</li>
-                <li>Power Management: Compact LiPo battery configuration optimized for wearable safety[cite: 2].</li>
-            </ul>
+    <!-- Modal 2: SoleMate Specs -->
+    <div id="modal-solemate" class="fixed inset-0 z-50 hidden flex items-center justify-center p-6 modal-backdrop">
+        <div class="bg-white max-w-lg w-full rounded-2xl p-6 space-y-4 shadow-2xl border border-black/5">
+            <div class="flex justify-between items-center border-b border-gray-100 pb-3">
+                <h4 class="font-bold text-appleDark text-base">SoleMate Technical Architecture</h4>
+                <button onclick="closeModal('modal-solemate')" class="text-gray-400 hover:text-appleDark"><i class="fa-solid fa-xmark text-base"></i></button>
+            </div>
+            <div class="space-y-3 text-xs text-gray-600 leading-relaxed max-h-[60vh] overflow-y-auto pr-1">
+                <p><strong>Sensory Hardware:</strong> Utilizes piezoelectric force sensor matrix placed at key kinetic footprint pressure zones, paired with an MPU6050 accelerometer/gyroscope for slope estimation.</p>
+                <p><strong>Microcontroller:</strong> ESP32 core processes analog resistance changes to calculate step metrics, estimated caloric expenditure, and lateral gait slants.</p>
+                <p><strong>MATLAB Pressure Heatmaps:</strong> Streams real time pressure distribution profiles to MATLAB scripts, enabling visualization for medical arch analysis (flat foot vs high arch support tracking).</p>
+            </div>
+            <div class="pt-2 text-right">
+                <button onclick="closeModal('modal-solemate')" class="px-4 py-2 rounded-full bg-appleGray text-xs font-semibold text-appleDark">Close Specs</button>
+            </div>
         </div>
     </div>
 
-    <div id="modal3" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal('modal3')">&times;</span>
-            <h3>Autonomous Robot Target Detection Node</h3>
-            <p>Vision pipeline designed for mobile robot platforms to isolate obstacles and colored targets[cite: 2].</p>
-            <h4>Implementation Details</h4>
-            <ul>
-                <li>Framework: Robot Operating System (ROS) environment[cite: 2].</li>
-                <li>Image Processing: OpenCV library utilizing Hue, Saturation, Value (HSV) color dimension masking filters[cite: 2].</li>
-                <li>Hardware: Deployed on TurtleBot mobile robot camera setups with interactive trackbars for real time threshold tuning[cite: 2].</li>
-            </ul>
+    <!-- Modal 3: ROS Target Detection Specs -->
+    <div id="modal-ros" class="fixed inset-0 z-50 hidden flex items-center justify-center p-6 modal-backdrop">
+        <div class="bg-white max-w-lg w-full rounded-2xl p-6 space-y-4 shadow-2xl border border-black/5">
+            <div class="flex justify-between items-center border-b border-gray-100 pb-3">
+                <h4 class="font-bold text-appleDark text-base">Target Detection Node Specifications</h4>
+                <button onclick="closeModal('modal-ros')" class="text-gray-400 hover:text-appleDark"><i class="fa-solid fa-xmark text-base"></i></button>
+            </div>
+            <div class="space-y-3 text-xs text-gray-600 leading-relaxed max-h-[60vh] overflow-y-auto pr-1">
+                <p><strong>Computer Vision Pipeline:</strong> Processes camera feed through HSV (Hue, Saturation, Value) color space correction to handle lighting variations better than standard RGB masking.</p>
+                <p><strong>OpenCV Filtering:</strong> Interactive trackbars allow live tuning of min/max HSV thresholds to generate clean binary mask overlays isolating red, yellow, and green target obstacles.</p>
+                <p><strong>ROS Execution:</strong> Runs as a published C++ ROS node sending target bounding vectors directly to mobile TurtleBot navigation path planners.</p>
+            </div>
+            <div class="pt-2 text-right">
+                <button onclick="closeModal('modal-ros')" class="px-4 py-2 rounded-full bg-appleGray text-xs font-semibold text-appleDark">Close Specs</button>
+            </div>
         </div>
     </div>
 
-    <div id="modal4" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal('modal4')">&times;</span>
-            <h3>Webots Mobile Robot Simulation</h3>
-            <p>Simulation project focusing on autonomous mobile robot traversal through structured courses[cite: 2].</p>
-            <h4>Specifications</h4>
-            <ul>
-                <li>Environment: Webots robot simulator[cite: 2].</li>
-                <li>Controllers: Python scripted control nodes[cite: 2].</li>
-                <li>Sensors: Simulated proximity sensors and camera arrays for collision avoidance and line tracking[cite: 2].</li>
-            </ul>
+    <!-- Modal 4: Webots Simulation Specs -->
+    <div id="modal-webots" class="fixed inset-0 z-50 hidden flex items-center justify-center p-6 modal-backdrop">
+        <div class="bg-white max-w-lg w-full rounded-2xl p-6 space-y-4 shadow-2xl border border-black/5">
+            <div class="flex justify-between items-center border-b border-gray-100 pb-3">
+                <h4 class="font-bold text-appleDark text-base">Webots Mobile Robot Simulation</h4>
+                <button onclick="closeModal('modal-webots')" class="text-gray-400 hover:text-appleDark"><i class="fa-solid fa-xmark text-base"></i></button>
+            </div>
+            <div class="space-y-3 text-xs text-gray-600 leading-relaxed max-h-[60vh] overflow-y-auto pr-1">
+                <p><strong>Simulation Environment:</strong> Built inside Webots to simulate sensory responses and motor output control under varying ground friction and barrier constraints.</p>
+                <p><strong>Algorithmic Control:</strong> Implements Python controllers for dynamic path planning, wall following, line tracing, and IR distance sensor obstacle avoidance.</p>
+            </div>
+            <div class="pt-2 text-right">
+                <button onclick="closeModal('modal-webots')" class="px-4 py-2 rounded-full bg-appleGray text-xs font-semibold text-appleDark">Close Specs</button>
+            </div>
         </div>
     </div>
 
-    <div id="modal5" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal('modal5')">&times;</span>
-            <h3>Robotic Arm Kinematics & MeQube Line Tracker</h3>
-            <p>Kinematic modeling and line tracking project utilizing MATLAB GUIs and physical robot manipulators[cite: 2].</p>
-            <h4>Specifications</h4>
-            <ul>
-                <li>Software: MATLAB programming environment with custom GUI controls for direct and inverse kinematics (T and Q matrices)[cite: 2].</li>
-                <li>Hardware: Dobot / industrial robotic arm setups executing pick and place operations[cite: 2].</li>
-                <li>Navigation: MeQube line tracking hardware navigating complex obstacle courses[cite: 2].</li>
-            </ul>
+    <!-- Modal 5: Robotic Arm Kinematics Specs -->
+    <div id="modal-kinematics" class="fixed inset-0 z-50 hidden flex items-center justify-center p-6 modal-backdrop">
+        <div class="bg-white max-w-lg w-full rounded-2xl p-6 space-y-4 shadow-2xl border border-black/5">
+            <div class="flex justify-between items-center border-b border-gray-100 pb-3">
+                <h4 class="font-bold text-appleDark text-base">Robotic Arm Kinematics & MeQube Specs</h4>
+                <button onclick="closeModal('modal-kinematics')" class="text-gray-400 hover:text-appleDark"><i class="fa-solid fa-xmark text-base"></i></button>
+            </div>
+            <div class="space-y-3 text-xs text-gray-600 leading-relaxed max-h-[60vh] overflow-y-auto pr-1">
+                <p><strong>Kinematic GUI Controls:</strong> Developed custom MATLAB scripts and UI controls to compute transformation matrices (T matrix) and joint angles (Q vector) for 6 DOF robotic arms.</p>
+                <p><strong>Pick and Place Automation:</strong> Interfaced Dobot Magician manipulator vacuum end effectors with target sorting platforms.</p>
+                <p><strong>MeQube Hardware:</strong> Configured mobile line tracking micro robots to maneuver through black line courses with obstacle detection.</p>
+            </div>
+            <div class="pt-2 text-right">
+                <button onclick="closeModal('modal-kinematics')" class="px-4 py-2 rounded-full bg-appleGray text-xs font-semibold text-appleDark">Close Specs</button>
+            </div>
         </div>
     </div>
 
-    <div id="modal6" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal('modal6')">&times;</span>
-            <h3>MOSFET High Current LED Control Circuit</h3>
-            <p>Power control and switching circuit designed for artistic LED installations[cite: 2].</p>
-            <h4>Specifications</h4>
-            <ul>
-                <li>Components: IRFZ44N N channel MOSFET transistors (Gate, Drain, Source configuration)[cite: 2].</li>
-                <li>Controller: Arduino UNO / ESP32 microcontrollers supplying PWM gate signals[cite: 2].</li>
-                <li>Power Source: Isolated 9V power supplies driving high current load arrays safely through breadboard prototypes[cite: 2].</li>
-            </ul>
+    <!-- Modal 6: MOSFET Specs -->
+    <div id="modal-mosfet" class="fixed inset-0 z-50 hidden flex items-center justify-center p-6 modal-backdrop">
+        <div class="bg-white max-w-lg w-full rounded-2xl p-6 space-y-4 shadow-2xl border border-black/5">
+            <div class="flex justify-between items-center border-b border-gray-100 pb-3">
+                <h4 class="font-bold text-appleDark text-base">MOSFET High Current Control Circuit</h4>
+                <button onclick="closeModal('modal-mosfet')" class="text-gray-400 hover:text-appleDark"><i class="fa-solid fa-xmark text-base"></i></button>
+            </div>
+            <div class="space-y-3 text-xs text-gray-600 leading-relaxed max-h-[60vh] overflow-y-auto pr-1">
+                <p><strong>Transistor Logic:</strong> Utilizes IRFZ44N N channel MOSFETs (Gate, Drain, Source pin configurations) to switch high current power rails driven by low voltage microcontroller logic pins.</p>
+                <p><strong>PWM Modulation:</strong> Drives LED lighting arrays using pulse width modulation (PWM) signals from ESP32 / Arduino UNO controllers.</p>
+                <p><strong>Prototyping:</strong> Validated circuit design in Tinkercad simulations prior to physical breadboard assembly.</p>
+            </div>
+            <div class="pt-2 text-right">
+                <button onclick="closeModal('modal-mosfet')" class="px-4 py-2 rounded-full bg-appleGray text-xs font-semibold text-appleDark">Close Specs</button>
+            </div>
         </div>
     </div>
 
-    <div id="modal7" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal('modal7')">&times;</span>
-            <h3>Java Systems & Object Oriented Development</h3>
-            <p>Software development project centered on robust software structuring[cite: 2].</p>
-            <h4>Specifications</h4>
-            <ul>
-                <li>Language: Java[cite: 2].</li>
-                <li>Paradigms: Object oriented programming, encapsulation, inheritance, and polymorphism[cite: 2].</li>
-                <li>Logic: Custom data structure implementations and algorithmic efficiency optimization[cite: 2].</li>
-            </ul>
+    <!-- Modal 7: Java OOP Specs -->
+    <div id="modal-java" class="fixed inset-0 z-50 hidden flex items-center justify-center p-6 modal-backdrop">
+        <div class="bg-white max-w-lg w-full rounded-2xl p-6 space-y-4 shadow-2xl border border-black/5">
+            <div class="flex justify-between items-center border-b border-gray-100 pb-3">
+                <h4 class="font-bold text-appleDark text-base">Java Object Oriented Development Specs</h4>
+                <button onclick="closeModal('modal-java')" class="text-gray-400 hover:text-appleDark"><i class="fa-solid fa-xmark text-base"></i></button>
+            </div>
+            <div class="space-y-3 text-xs text-gray-600 leading-relaxed max-h-[60vh] overflow-y-auto pr-1">
+                <p><strong>Architecture:</strong> Built using pure Java object oriented paradigms, focusing on encapsulation, inheritance, and clean interface segregation.</p>
+                <p><strong>Algorithmic Logic:</strong> Features optimized state data structures, exception handling mechanisms, and automated diagnostic report output generators.</p>
+            </div>
+            <div class="pt-2 text-right">
+                <button onclick="closeModal('modal-java')" class="px-4 py-2 rounded-full bg-appleGray text-xs font-semibold text-appleDark">Close Specs</button>
+            </div>
         </div>
     </div>
 
+    <!-- Footer -->
+    <footer class="py-8 px-6 bg-appleGray text-center text-xs text-appleTextSubtle border-t border-black/5">
+        <p>© Jane Frances Adolar Javier • Computer and Autonomous Systems Engineer</p>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 bg-appleDark text-white px-4 py-2.5 rounded-xl shadow-lg text-xs font-medium flex items-center space-x-2">
+        <i class="fa-solid fa-check text-emerald-400"></i>
+        <span>Copied j3javv@gmail.com to clipboard</span>
+    </div>
+
+    <!-- JavaScript Interactions -->
     <script>
-        function openModal(modalId) {
-            document.getElementById(modalId).style.display = "flex";
+        // Intersection Observer for scroll reveal animations
+        document.addEventListener("DOMContentLoaded", () => {
+            const reveals = document.querySelectorAll(".reveal");
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("active");
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            reveals.forEach(el => observer.observe(el));
+        });
+
+        // Copy Email Address function
+        function copyEmail() {
+            const email = "j3javv@gmail.com";
+            const dummy = document.createElement("textarea");
+            document.body.appendChild(dummy);
+            dummy.value = email;
+            dummy.select();
+            document.execCommand("copy");
+            document.body.removeChild(dummy);
+
+            const toast = document.getElementById('toast');
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 2500);
         }
-        function closeModal(modalId) {
-            document.getElementById(modalId).style.display = "none";
+
+        // Modal triggers
+        function openModal(id) {
+            document.getElementById(id).classList.remove('hidden');
         }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.add('hidden');
+        }
+
+        // Close modal when clicking outside box
         window.onclick = function(event) {
-            if (event.target.classList.contains('modal')) {
-                event.target.style.display = "none";
+            if (event.target.classList.contains('modal-backdrop')) {
+                event.target.classList.add('hidden');
             }
         }
     </script>
