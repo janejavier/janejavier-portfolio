@@ -311,6 +311,29 @@
             margin-bottom: 0;
         }
 
+        /* Video Showcase Styling */
+        .video-container {
+            margin-top: 20px;
+            background: #f5f5f7;
+            border: 1px solid #d2d2d7;
+            border-radius: 12px;
+            padding: 10px;
+            text-align: center;
+        }
+        .video-container video {
+            width: 100%;
+            max-height: 360px;
+            border-radius: 8px;
+            border: 1px solid #e5e5ea;
+            background-color: #000;
+        }
+        .video-container p {
+            font-size: 0.85rem;
+            color: #6e6e73;
+            margin-top: 8px;
+            margin-bottom: 0;
+        }
+
         /* Lightbox Fullscreen Image Zoom Overlay */
         .lightbox {
             display: none;
@@ -579,6 +602,7 @@
         </div>
     </div>
 
+    <!-- Project 4 Modal with Webots Video Added -->
     <div id="modal4" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal('modal4')">&times;</span>
@@ -590,11 +614,19 @@
                 <li>Controllers: Python scripted control nodes.</li>
                 <li>Sensors: Simulated proximity sensors and camera arrays for collision avoidance and line tracking.</li>
             </ul>
+            
+            <h4>Simulation Demonstration Video</h4>
+            <div class="video-container">
+                <video controls preload="metadata">
+                    <source src="pictures/WeBots demonstration.mp4" type="video/mp4">
+                    Your browser does not support HTML5 video playback.
+                </video>
+                <p>Webots Autonomous Trajectory Run</p>
+            </div>
+
             <h4>Visual Documentation & Simulation Map</h4>
             <div class="image-gallery">
                 <div class="gallery-item"><img src="pictures/Picture18.png" alt="Webots Start to End Obstacle Maze Grid" onclick="zoomImage(this)" onerror="this.src='https://placehold.co/400x300/e8e8ed/0066cc?text=Picture13.png'"><p>Webots Obstacle Maze Grid</p></div>
-               <!-- <div class="gallery-item"><img src="pictures/Picture14.png" alt="Robot Simulation Trajectory View" onclick="zoomImage(this)" onerror="this.src='https://placehold.co/400x300/e8e8ed/0066cc?text=Picture14.png'"><p>Robot Trajectory View</p></div> -->
-                <!-- <div class="gallery-item"><img src="pictures/Picture15.png" alt="Sensor Debugging Dashboard" onclick="zoomImage(this)" onerror="this.src='https://placehold.co/400x300/e8e8ed/0066cc?text=Picture15.png'"><p>Sensor Debugging Dashboard</p></div> -->
             </div>
         </div>
     </div>
@@ -613,9 +645,8 @@
             <h4>Visual Documentation & Kinematics</h4>
             <div class="image-gallery">
                 <div class="gallery-item"><img src="pictures/Picture21.png" alt="MATLAB Kinematics GUI" onclick="zoomImage(this)" onerror="this.src='https://placehold.co/400x300/e8e8ed/0066cc?text=Picture16.png'"><p>MATLAB Kinematics GUI</p></div>
-                <div class="gallery-item"><img src="pictures/Picture12.png" alt="Dobot Pick and Place Workflow" onclick="zoomImage(this)" onerror="this.src='https://placehold.co/400x300/e8e8ed/0066cc?text=Picture17.png'"><p>Dobot Pick and Place Workflow</p></div>
+                <div class="gallery-item"><img src="pictures/Picture22.png" alt="Dobot Pick and Place Workflow" onclick="zoomImage(this)" onerror="this.src='https://placehold.co/400x300/e8e8ed/0066cc?text=Picture17.png'"><p>Dobot Pick and Place Workflow</p></div>
                 <div class="gallery-item"><img src="pictures/Picture23.png" alt="Microbit Obstacle Line Course" onclick="zoomImage(this)" onerror="this.src='https://placehold.co/400x300/e8e8ed/0066cc?text=Picture18.png'"><p>Microbit Obstacle Line Course</p></div>
-                <!--<div class="gallery-item"><img src="pictures/Picture19.png" alt="Manipulator Calibration" onclick="zoomImage(this)" onerror="this.src='https://placehold.co/400x300/e8e8ed/0066cc?text=Picture19.png'"><p>Manipulator Calibration</p></div> -->
             </div>
         </div>
     </div>
@@ -635,8 +666,6 @@
             <div class="image-gallery">
                 <div class="gallery-item"><img src="pictures/Picture19.png" alt="IRFZ44N Pinout & Schematic" onclick="zoomImage(this)" onerror="this.src='https://placehold.co/400x300/e8e8ed/0066cc?text=Picture20.png'"><p>IRFZ44N Pinout & Schematic</p></div>
                 <div class="gallery-item"><img src="pictures/Picture20.jpg" alt="Tinkercad LED Driver Layout" onclick="zoomImage(this)" onerror="this.src='https://placehold.co/400x300/e8e8ed/0066cc?text=Picture21.png'"><p>Tinkercad LED Driver Layout</p></div>
-               <!-- <div class="gallery-item"><img src="pictures/Picture22.png" alt="Breadboard Power Driver Setup" onclick="zoomImage(this)" onerror="this.src='https://placehold.co/400x300/e8e8ed/0066cc?text=Picture22.png'"><p>Breadboard Power Driver Setup</p></div> -->
-                <!--<div class="gallery-item"><img src="pictures/Picture23.png" alt="High Current Load Test" onclick="zoomImage(this)" onerror="this.src='https://placehold.co/400x300/e8e8ed/0066cc?text=Picture23.png'"><p>High Current Load Test</p></div>-->
             </div>
         </div>
     </div>
@@ -651,7 +680,10 @@
             document.getElementById(modalId).style.display = "flex";
         }
         function closeModal(modalId) {
-            document.getElementById(modalId).style.display = "none";
+            const modal = document.getElementById(modalId);
+            modal.style.display = "none";
+            const videos = modal.querySelectorAll('video');
+            videos.forEach(video => video.pause());
         }
         function zoomImage(imgElement) {
             const lightbox = document.getElementById('lightbox');
@@ -665,6 +697,8 @@
         window.onclick = function(event) {
             if (event.target.classList.contains('modal')) {
                 event.target.style.display = "none";
+                const videos = event.target.querySelectorAll('video');
+                videos.forEach(video => video.pause());
             }
         }
     </script>
