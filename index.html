@@ -74,22 +74,47 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 60px 20px;
-            background: radial-gradient(circle at 50% 30%, rgba(0, 102, 204, 0.04) 0%, rgba(255, 255, 255, 0) 70%);
+            padding: 80px 20px 40px 20px;
+            background: radial-gradient(circle at 50% 30%, rgba(0, 102, 204, 0.05) 0%, rgba(255, 255, 255, 0) 70%);
             margin-top: -60px;
         }
+        
+        /* Stylized Border Container for Hero */
+        .hero-card {
+            background: rgba(245, 245, 247, 0.6);
+            border: 1px solid rgba(0, 102, 204, 0.2);
+            border-radius: 24px;
+            padding: 50px 40px;
+            max-width: 780px;
+            width: 100%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+            backdrop-filter: blur(5px);
+        }
+
+        .degree-badge {
+            display: inline-block;
+            background: rgba(0, 102, 204, 0.08);
+            color: #0066cc;
+            font-size: 0.9rem;
+            font-weight: 600;
+            padding: 6px 16px;
+            border-radius: 20px;
+            margin-bottom: 18px;
+            border: 1px solid rgba(0, 102, 204, 0.15);
+            letter-spacing: 0.02em;
+        }
+
         h1 {
             font-size: 3.2rem;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             letter-spacing: -0.03em;
             color: #1d1d1f;
         }
         h1 span {
             color: #0066cc;
         }
-        #about p {
-            max-width: 720px;
-            font-size: 1.2rem;
+        .hero-card p {
+            font-size: 1.15rem;
             color: #424245;
             margin-bottom: 25px;
             line-height: 1.7;
@@ -313,6 +338,7 @@
             .links a { margin-left: 12px; font-size: 0.85rem; }
             h1 { font-size: 2.2rem; }
             h2 { font-size: 1.6rem; }
+            .hero-card { padding: 30px 20px; }
             .edu-item, .exp-item { flex-direction: column; align-items: flex-start; gap: 6px; }
             .contact-box { grid-template-columns: 1fr; }
         }
@@ -336,9 +362,12 @@
 
     <!-- Full Screen Hero Introduction Section -->
     <section id="about">
-        <h1>Jane Frances Adolar Javier</h1>
-        <p>Reliable Computer Engineering student and professional with technical strengths across robotics architectures, integrated hardware firmware design, and algorithmic system diagnostics. Skilled at analyzing sensory interfaces, solving system feedback dependencies, and executing engineering plans.</p>
-        <a href="mailto:j3javv@gmail.com" class="btn">Email Me Directly</a>
+        <div class="hero-card">
+            <span class="degree-badge">Bachelor of Engineering Honours in Computer and Autonomous Systems Engineering</span>
+            <h1>Jane Frances Adolar Javier</h1>
+            <p>Reliable Computer Engineering student and professional with technical strengths across robotics architectures, integrated hardware firmware design, and algorithmic system diagnostics. Skilled at analyzing sensory interfaces, solving system feedback dependencies, and executing engineering plans.</p>
+            <a href="mailto:j3javv@gmail.com" class="btn">Email Me Directly</a>
+        </div>
     </section>
 
     <div class="container">
@@ -499,11 +528,10 @@
             </ul>
             <h4>Visual Documentation & Prototypes</h4>
             <div class="image-gallery">
-                <div class="gallery-item"><img src="C:\Users\J3Jav\Documents\ECTE471\jane-portfolio\pictures\Picture1.png" alt="3D Printed Shell Interior" onclick="zoomImage(this)"><p>3D Printed Shell Interior</p></div>
-                <div class="gallery-item"><img src="C:\Users\J3Jav\Documents\ECTE471\jane-portfolio\pictures\Picture2.jpg" alt="Assembled Shell Exterior" onclick="zoomImage(this)"><p>Assembled Shell Exterior</p></div>
-                <div class="gallery-item"><img src="C:\Users\J3Jav\Documents\ECTE471\jane-portfolio\pictures\Picture4.jpg" alt="Breadboard & Solenoid Wiring" onclick="zoomImage(this)"><p>Breadboard & Solenoid Wiring</p></div>
-                <div class="gallery-item"><img src="C:\Users\J3Jav\Documents\ECTE471\jane-portfolio\pictures\Picture7.png" alt="D Flip-Flop Logic Schematic" onclick="zoomImage(this)"><p>D Flip-Flop Logic Schematic</p></div>
-                
+                <div class="gallery-item"><img src="pictures/Picture1.png" alt="3D Printed Shell Interior" onclick="zoomImage(this)" onerror="this.src='https://placehold.co/400x300/e8e8ed/0066cc?text=Picture1.png'"><p>3D Printed Shell Interior</p></div>
+                <div class="gallery-item"><img src="pictures/Picture2.png" alt="Assembled Shell Exterior" onclick="zoomImage(this)" onerror="this.src='https://placehold.co/400x300/e8e8ed/0066cc?text=Picture2.png'"><p>Assembled Shell Exterior</p></div>
+                <div class="gallery-item"><img src="pictures/Picture3.png" alt="Breadboard & Solenoid Wiring" onclick="zoomImage(this)" onerror="this.src='https://placehold.co/400x300/e8e8ed/0066cc?text=Picture3.png'"><p>Breadboard & Solenoid Wiring</p></div>
+                <div class="gallery-item"><img src="pictures/Picture4.png" alt="D Flip-Flop Logic Schematic" onclick="zoomImage(this)" onerror="this.src='https://placehold.co/400x300/e8e8ed/0066cc?text=Picture4.png'"><p>D Flip-Flop Logic Schematic</p></div>
             </div>
         </div>
     </div>
@@ -522,10 +550,10 @@
             </ul>
             <h4>Visual Documentation & Prototypes</h4>
             <div class="image-gallery">
-                <div class="gallery-item"><img src="pictures/Picture5.png" alt="Blender Insole Component CAD" onclick="zoomImage(this)"><p>Blender Insole Component CAD</p></div>
-                <div class="gallery-item"><img src="pictures/Picture6.png" alt="TinkerCad Sensor Layout" onclick="zoomImage(this)"><p>TinkerCad Sensor Layout</p></div>
-                <div class="gallery-item"><img src="pictures/Picture7.png" alt="Shoe Insole & Breadboard Setup" onclick="zoomImage(this)"><p>Shoe Insole & Breadboard Setup</p></div>
-                <div class="gallery-item"><img src="pictures/Picture8.png" alt="Custom Soldered Perfboard" onclick="zoomImage(this)"><p>Custom Soldered Perfboard</p></div>
+                <div class="gallery-item"><img src="pictures/Picture5.png" alt="Blender Insole Component CAD" onclick="zoomImage(this)" onerror="this.src='https://placehold.co/400x300/e8e8ed/0066cc?text=Picture5.png'"><p>Blender Insole Component CAD</p></div>
+                <div class="gallery-item"><img src="pictures/Picture6.png" alt="TinkerCad Sensor Layout" onclick="zoomImage(this)" onerror="this.src='https://placehold.co/400x300/e8e8ed/0066cc?text=Picture6.png'"><p>TinkerCad Sensor Layout</p></div>
+                <div class="gallery-item"><img src="pictures/Picture7.png" alt="Shoe Insole & Breadboard Setup" onclick="zoomImage(this)" onerror="this.src='https://placehold.co/400x300/e8e8ed/0066cc?text=Picture7.png'"><p>Shoe Insole & Breadboard Setup</p></div>
+                <div class="gallery-item"><img src="pictures/Picture8.png" alt="Custom Soldered Perfboard" onclick="zoomImage(this)" onerror="this.src='https://placehold.co/400x300/e8e8ed/0066cc?text=Picture8.png'"><p>Custom Soldered Perfboard</p></div>
             </div>
         </div>
     </div>
@@ -543,10 +571,10 @@
             </ul>
             <h4>Visual Documentation & Vision Pipeline</h4>
             <div class="image-gallery">
-                <div class="gallery-item"><img src="pictures/Picture9.png" alt="Linux ROS Trackbars & Preview" onclick="zoomImage(this)"><p>Linux ROS Trackbars & Preview</p></div>
-                <div class="gallery-item"><img src="pictures/Picture10.png" alt="HSV Threshold Segmentation" onclick="zoomImage(this)"><p>HSV Threshold Segmentation</p></div>
-                <div class="gallery-item"><img src="pictures/Picture11.png" alt="Red & Yellow Bounding Boxes" onclick="zoomImage(this)"><p>Red & Yellow Bounding Boxes</p></div>
-                <div class="gallery-item"><img src="pictures/Picture12.png" alt="Isolated Color Segmentation Result" onclick="zoomImage(this)"><p>Isolated Color Segmentation Result</p></div>
+                <div class="gallery-item"><img src="pictures/Picture9.png" alt="Linux ROS Trackbars & Preview" onclick="zoomImage(this)" onerror="this.src='https://placehold.co/400x300/e8e8ed/0066cc?text=Picture9.png'"><p>Linux ROS Trackbars & Preview</p></div>
+                <div class="gallery-item"><img src="pictures/Picture10.png" alt="HSV Threshold Segmentation" onclick="zoomImage(this)" onerror="this.src='https://placehold.co/400x300/e8e8ed/0066cc?text=Picture10.png'"><p>HSV Threshold Segmentation</p></div>
+                <div class="gallery-item"><img src="pictures/Picture11.png" alt="Red & Yellow Bounding Boxes" onclick="zoomImage(this)" onerror="this.src='https://placehold.co/400x300/e8e8ed/0066cc?text=Picture11.png'"><p>Red & Yellow Bounding Boxes</p></div>
+                <div class="gallery-item"><img src="pictures/Picture12.png" alt="Isolated Color Segmentation Result" onclick="zoomImage(this)" onerror="this.src='https://placehold.co/400x300/e8e8ed/0066cc?text=Picture12.png'"><p>Isolated Color Segmentation Result</p></div>
             </div>
         </div>
     </div>
@@ -564,9 +592,9 @@
             </ul>
             <h4>Visual Documentation & Simulation Map</h4>
             <div class="image-gallery">
-                <div class="gallery-item"><img src="pictures/Picture13.png" alt="Webots Start to End Obstacle Maze Grid" onclick="zoomImage(this)"><p>Webots Obstacle Maze Grid</p></div>
-                <div class="gallery-item"><img src="pictures/Picture14.png" alt="Robot Simulation Trajectory View" onclick="zoomImage(this)"><p>Robot Trajectory View</p></div>
-                <div class="gallery-item"><img src="pictures/Picture15.png" alt="Sensor Debugging Dashboard" onclick="zoomImage(this)"><p>Sensor Debugging Dashboard</p></div>
+                <div class="gallery-item"><img src="pictures/Picture13.png" alt="Webots Start to End Obstacle Maze Grid" onclick="zoomImage(this)" onerror="this.src='https://placehold.co/400x300/e8e8ed/0066cc?text=Picture13.png'"><p>Webots Obstacle Maze Grid</p></div>
+                <div class="gallery-item"><img src="pictures/Picture14.png" alt="Robot Simulation Trajectory View" onclick="zoomImage(this)" onerror="this.src='https://placehold.co/400x300/e8e8ed/0066cc?text=Picture14.png'"><p>Robot Trajectory View</p></div>
+                <div class="gallery-item"><img src="pictures/Picture15.png" alt="Sensor Debugging Dashboard" onclick="zoomImage(this)" onerror="this.src='https://placehold.co/400x300/e8e8ed/0066cc?text=Picture15.png'"><p>Sensor Debugging Dashboard</p></div>
             </div>
         </div>
     </div>
@@ -584,10 +612,10 @@
             </ul>
             <h4>Visual Documentation & Kinematics</h4>
             <div class="image-gallery">
-                <div class="gallery-item"><img src="pictures/Picture16.png" alt="MATLAB Kinematics GUI" onclick="zoomImage(this)"><p>MATLAB Kinematics GUI</p></div>
-                <div class="gallery-item"><img src="pictures/Picture17.png" alt="Dobot Pick and Place Workflow" onclick="zoomImage(this)"><p>Dobot Pick and Place Workflow</p></div>
-                <div class="gallery-item"><img src="pictures/Picture18.png" alt="MeQube Obstacle Line Course" onclick="zoomImage(this)"><p>MeQube Obstacle Line Course</p></div>
-                <div class="gallery-item"><img src="pictures/Picture19.png" alt="Manipulator Calibration" onclick="zoomImage(this)"><p>Manipulator Calibration</p></div>
+                <div class="gallery-item"><img src="pictures/Picture16.png" alt="MATLAB Kinematics GUI" onclick="zoomImage(this)" onerror="this.src='https://placehold.co/400x300/e8e8ed/0066cc?text=Picture16.png'"><p>MATLAB Kinematics GUI</p></div>
+                <div class="gallery-item"><img src="pictures/Picture17.png" alt="Dobot Pick and Place Workflow" onclick="zoomImage(this)" onerror="this.src='https://placehold.co/400x300/e8e8ed/0066cc?text=Picture17.png'"><p>Dobot Pick and Place Workflow</p></div>
+                <div class="gallery-item"><img src="pictures/Picture18.png" alt="MeQube Obstacle Line Course" onclick="zoomImage(this)" onerror="this.src='https://placehold.co/400x300/e8e8ed/0066cc?text=Picture18.png'"><p>MeQube Obstacle Line Course</p></div>
+                <div class="gallery-item"><img src="pictures/Picture19.png" alt="Manipulator Calibration" onclick="zoomImage(this)" onerror="this.src='https://placehold.co/400x300/e8e8ed/0066cc?text=Picture19.png'"><p>Manipulator Calibration</p></div>
             </div>
         </div>
     </div>
@@ -605,10 +633,10 @@
             </ul>
             <h4>Visual Documentation & Circuit Schematics</h4>
             <div class="image-gallery">
-                <div class="gallery-item"><img src="pictures/Picture20.png" alt="IRFZ44N Pinout & Schematic" onclick="zoomImage(this)"><p>IRFZ44N Pinout & Schematic</p></div>
-                <div class="gallery-item"><img src="pictures/Picture21.png" alt="Tinkercad LED Driver Layout" onclick="zoomImage(this)"><p>Tinkercad LED Driver Layout</p></div>
-                <div class="gallery-item"><img src="pictures/Picture22.png" alt="Breadboard Power Driver Setup" onclick="zoomImage(this)"><p>Breadboard Power Driver Setup</p></div>
-                <div class="gallery-item"><img src="pictures/Picture23.png" alt="High Current Load Test" onclick="zoomImage(this)"><p>High Current Load Test</p></div>
+                <div class="gallery-item"><img src="pictures/Picture20.png" alt="IRFZ44N Pinout & Schematic" onclick="zoomImage(this)" onerror="this.src='https://placehold.co/400x300/e8e8ed/0066cc?text=Picture20.png'"><p>IRFZ44N Pinout & Schematic</p></div>
+                <div class="gallery-item"><img src="pictures/Picture21.png" alt="Tinkercad LED Driver Layout" onclick="zoomImage(this)" onerror="this.src='https://placehold.co/400x300/e8e8ed/0066cc?text=Picture21.png'"><p>Tinkercad LED Driver Layout</p></div>
+                <div class="gallery-item"><img src="pictures/Picture22.png" alt="Breadboard Power Driver Setup" onclick="zoomImage(this)" onerror="this.src='https://placehold.co/400x300/e8e8ed/0066cc?text=Picture22.png'"><p>Breadboard Power Driver Setup</p></div>
+                <div class="gallery-item"><img src="pictures/Picture23.png" alt="High Current Load Test" onclick="zoomImage(this)" onerror="this.src='https://placehold.co/400x300/e8e8ed/0066cc?text=Picture23.png'"><p>High Current Load Test</p></div>
             </div>
         </div>
     </div>
